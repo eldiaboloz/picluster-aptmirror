@@ -1,0 +1,15 @@
+#!/bin/bash
+set -e
+if [[ "$(docker images -q picluster/apt-mirror 2> /dev/null)" == "" ]]; then
+	./build-image
+fi
+if [[ "$(docker ps -a --filter="name=picluster-aptmirror" -q 2> /dev/null)" == "" ]]; then
+	./start
+fi
+if [ ! -f "/etc/systemd/system/picluster-aptmirror.service" ]; then
+	cp picluster-aptmirror.service /etc/systemd/system/picluster-aptmirror.service
+	systemctl daemon-reload
+	systemctl enable picluster-aptmirror.service
+	systemctl start picluster-aptmirror.service
+fi
+
