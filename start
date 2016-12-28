@@ -1,0 +1,2 @@
+#!/bin/bash
+docker run -d -v /storage/aptmirror:/storage/aptmirror --name=aptmirror -p 9999:9999 picluster/apt-mirror

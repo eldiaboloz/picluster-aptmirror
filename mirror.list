@@ -1,0 +1,23 @@
+############# config ##################
+#
+set base_path    /storage/aptmirror
+#
+# set mirror_path  $base_path/mirror
+# set skel_path    $base_path/skel
+# set var_path     $base_path/var
+# set cleanscript $var_path/clean.sh
+# set defaultarch  <running host architecture>
+# set postmirror_script $var_path/postmirror.sh
+# set run_postmirror 0
+set nthreads     4
+set _tilde 0
+#
+############# end config ##############
+
+# new repos
+deb http://mirrordirector.raspbian.org/raspbian/ jessie main contrib non-free rpi firmware
+deb http://archive.raspberrypi.org/debian/ jessie main ui
+
+clean http://mirrordirector.raspbian.org/raspbian/ jessie main contrib non-free rpi firmware
+clean http://archive.raspberrypi.org/debian/ jessie main ui
+
