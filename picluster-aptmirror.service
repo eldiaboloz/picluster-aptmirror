@@ -1,0 +1,11 @@
+[Unit]
+Requires=docker.service
+After=docker.service
+Description=Picluster Apt mirror
+
+[Service]
+Type=oneshot
+ExecStart=/usr/bin/docker start picluster-aptmirror
+
+[Install]
+WantedBy=default.target
