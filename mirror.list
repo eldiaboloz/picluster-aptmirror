@@ -17,7 +17,8 @@ set _tilde 0
 # new repos
 deb http://mirrordirector.raspbian.org/raspbian/ jessie main contrib non-free rpi firmware
 deb http://archive.raspberrypi.org/debian/ jessie main ui
+deb-armhf https://apt.dockerproject.org/repo raspbian-jessie main
 
 clean http://mirrordirector.raspbian.org/raspbian/ jessie main contrib non-free rpi firmware
 clean http://archive.raspberrypi.org/debian/ jessie main ui
-
+clean https://apt.dockerproject.org/repo raspbian-jessie main

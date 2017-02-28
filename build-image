@@ -1,2 +1,2 @@
 #!/bin/bash
-docker build -t picluster/apt-mirror .
+docker image build -t picluster/apt-mirror . "$@"

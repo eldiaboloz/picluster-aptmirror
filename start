@@ -1,2 +1,4 @@
 #!/bin/bash
-docker run -d -v /storage/aptmirror:/storage/aptmirror --name=picluster-aptmirror -p 9999:9999 picluster/apt-mirror
+docker container stop picluster-aptmirror
+docker container rm picluster-aptmirror
+docker container run -d -v /storage/aptmirror:/storage/aptmirror --restart unless-stopped --name=picluster-aptmirror -p 9999:9999 picluster/apt-mirror
